@@ -11,7 +11,7 @@ not identifying itself as Claude.
 
 ## Configuration
 
-No installation required. The MCP configurations below use `bunx` to run the package directly.
+No installation required. The MCP configurations below use `bunx` to run the package directly from GitHub.
 
 ### Claude Desktop
 
@@ -22,7 +22,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
   "mcpServers": {
     "fetch": {
       "command": "bunx",
-      "args": ["mcp-bun-fetch"]
+      "args": ["github:scottpierce/mcp-bun-fetch#v1"]
     }
   }
 }
@@ -37,7 +37,7 @@ Add to MCP settings:
   "mcpServers": {
     "fetch": {
       "command": "bunx",
-      "args": ["mcp-bun-fetch"]
+      "args": ["github:scottpierce/mcp-bun-fetch#v1"]
     }
   }
 }
