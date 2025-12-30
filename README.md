@@ -22,7 +22,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
   "mcpServers": {
     "fetch": {
       "command": "bunx",
-      "args": ["github:scottpierce/mcp-bun-fetch#v1"]
+      "args": ["github:ScottPierce/mcp-bun-fetch#v1"]
     }
   }
 }
@@ -33,7 +33,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 Run the following command:
 
 ```bash
-claude mcp add fetch -- bunx github:scottpierce/mcp-bun-fetch#v1
+claude mcp add fetch -- bunx github:ScottPierce/mcp-bun-fetch#v1
 ```
 
 ## Local Development

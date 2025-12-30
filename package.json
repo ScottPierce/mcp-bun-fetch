@@ -14,7 +14,7 @@
   },
   "description": "MCP server for fetching web content",
   "scripts": {
-    "build": "bun build index.ts --minify --sourcemap=linked --outdir=dist && echo '#!/usr/bin/env bun' | cat - dist/index.js > dist/tmp && mv dist/tmp dist/index.js",
+    "build": "bun build index.ts --minify --sourcemap=linked --outdir=dist --target=bun",
     "style:fix": "biome check --write",
     "style:check": "biome check",
     "test": "bun test"
