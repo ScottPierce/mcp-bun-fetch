@@ -1,0 +1,25 @@
+{
+  "name": "mcp-fetch",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "2.3.10",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "bin": {
+    "mcp-fetch": "./dist/index.js"
+  },
+  "description": "MCP server for fetching web content",
+  "scripts": {
+    "build": "bun build index.ts --minify --sourcemap=linked --outdir=dist",
+    "style:fix": "biome check --write",
+    "style:check": "biome check",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "zod": "^4.2.1"
+  }
+}
