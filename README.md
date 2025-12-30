@@ -1,60 +1,89 @@
-# mcp-fetch
+# mcp-bun-fetch
 
-An MCP server that fetches web content.
+MCP server that fetches web content, converts HTML to Markdown, and processes it with Claude AI. This is meant to be
+a replacement for Claude's default WebFetch, that seems to get regularly blocked from servers. This works around that by
+not identifying itself as Claude.
 
-## Build
+## Requirements
 
-```bash
-bun install
-bun run build
-```
+- [Bun](https://bun.sh/)
+- [Claude CLI](https://docs.anthropic.com/en/docs/claude-code) (authenticated)
 
-This creates a bundled JS file at `dist/index.js`.
+## Configuration
 
-## Usage with Claude Desktop
+No installation required. The MCP configurations below use `bunx` to run the package directly.
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+### Claude Desktop
 
-```json
-{
-  "mcpServers": {
-    "fetch": {
-      "command": "bun",
-      "args": ["/path/to/mcp-fetch/dist/index.js"]
-    }
-  }
-}
-```
-
-## Usage with Claude Code
-
-Add to your Claude Code MCP settings:
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
 
 ```json
 {
   "mcpServers": {
     "fetch": {
-      "command": "bun",
-      "args": ["/path/to/mcp-fetch/dist/index.js"]
+      "command": "bunx",
+      "args": ["mcp-bun-fetch"]
     }
   }
 }
 ```
 
-## Development
+### Claude Code
 
-Run directly without building:
+Add to MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "bunx",
+      "args": ["mcp-bun-fetch"]
+    }
+  }
+}
+```
+
+## Local Development
+
+Run without building:
 
 ```bash
 bun run index.ts
 ```
 
-## Tools
+Run tests:
+
+```bash
+bun test
+```
+
+Build:
+
+```bash
+bun run build
+```
+
+### Local Installation
+
+To use a local build instead of a published package:
+
+```json
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "bun",
+      "args": ["/absolute/path/to/mcp-fetch/dist/index.js"]
+    }
+  }
+}
+```
+
+## Tool
 
 ### fetch
 
-Fetches content from a URL.
+Fetches a URL, converts HTML to Markdown, and processes with Claude.
 
-**Parameters:**
+Parameters:
 - `url` (required): URL to fetch
-- `prompt` (optional): What to extract from the page
+- `prompt` (required): What to extract or analyze from the page

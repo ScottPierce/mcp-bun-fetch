@@ -1,5 +1,5 @@
 {
-  "name": "mcp-fetch",
+  "name": "mcp-bun-fetch",
   "version": "1.0.0",
   "type": "module",
   "devDependencies": {
@@ -10,7 +10,7 @@
     "typescript": "^5"
   },
   "bin": {
-    "mcp-fetch": "./dist/index.js"
+    "mcp-bun-fetch": "./dist/index.js"
   },
   "description": "MCP server for fetching web content",
   "scripts": {
@@ -20,6 +20,8 @@
     "test": "bun test"
   },
   "dependencies": {
+    "@types/turndown": "^5.0.6",
+    "turndown": "^7.2.2",
     "zod": "^4.2.1"
   }
 }
