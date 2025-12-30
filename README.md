@@ -30,17 +30,10 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 
 ### Claude Code
 
-Add to MCP settings:
+Run the following command:
 
-```json
-{
-  "mcpServers": {
-    "fetch": {
-      "command": "bunx",
-      "args": ["github:scottpierce/mcp-bun-fetch#v1"]
-    }
-  }
-}
+```bash
+claude mcp add fetch -- bunx github:scottpierce/mcp-bun-fetch#v1
 ```
 
 ## Local Development
